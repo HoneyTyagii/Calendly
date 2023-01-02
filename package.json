@@ -8,7 +8,7 @@
     "dev" : "nodemon app.js"
   },
   "keywords": [],
-  "author": "salik47",
+  "author": "honey",
   "license": "ISC",
   "dependencies": {
     "bycrypt": "^5.1.0",
