@@ -87,11 +87,11 @@ router.post("/signin", async (req, res) => {
 
     console.log(existingUser,existingUser.id);
     const payload = {user: {id: existingUser.id}};
-    const bearerToken = await jwt.sign(payload, SECRET, {
+    const bearerToken = jwt.sign(payload, SECRET, {
         expiresIn: 360000,
-    }
+    },
 
-    res.cookie("t", bearerToken, { expire: new Date() + 9999 });
+        res.cookie("t", bearerToken, { expire: new Date() + 9999 }));
 
     console.log("Logged in successfully");
 
