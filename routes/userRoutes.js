@@ -73,7 +73,7 @@ router.post("/signin", async (req, res) => {
     const existingUser = await User.findOne({ where: { email: email } }); //* check if the user with the entered email exists in the database
     if (!existingUser) {
       return res.status(404).json("Error: User not found");
-    }
+    } 
 
     //* hashes the entered password and then compares it to the hashed password stored in the database
     const passwordMatched = await bcrypt.compare(
@@ -91,7 +91,7 @@ router.post("/signin", async (req, res) => {
         expiresIn: 360000,
     },
 
-        res.cookie("t", bearerToken, { expire: new Date() + 9999 }));
+    res.cookie("t", bearerToken, { expire: new Date() + 9999 }));
 
     console.log("Logged in successfully");
 
