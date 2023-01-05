@@ -3,8 +3,8 @@ const { objectId } = mongoose.Schema;
 
 const scheduleSchema = new Mongoose.Schema({
     user:{
-        type: Mongoose.Schema.Types.ObjectId,
-        ref: "User"
+        type: ObjectId,
+        ref: "User",
     },
     day:{
         type: Data,
